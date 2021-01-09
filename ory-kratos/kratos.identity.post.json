@@ -1,0 +1,12 @@
+{
+    "traits": {
+        "email": "test@isi.co.id",
+        "username": "test"
+    },
+    "recovery_addresses": [
+        {
+            "value": "test@isi.co.id",
+            "via": "email"
+        }
+    ]
+}

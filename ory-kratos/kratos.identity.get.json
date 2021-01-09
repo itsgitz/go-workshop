@@ -1,0 +1,26 @@
+{
+    "id": "d30aba0c-32d6-42b1-a9a9-dc34d7ef2751",
+    "schema_id": "default",
+    "schema_url": "http://127.0.0.1:4455/kratos/public/schemas/default",
+    "traits": {
+        "email": "ryoko@isi.co.id",
+        "username": "ryoko"
+    },
+    "verifiable_addresses": [
+        {
+            "id": "e0d68717-37e5-4174-ac0a-8f6dc8f4e1b5",
+            "value": "ryoko@isi.co.id",
+            "verified": false,
+            "via": "email",
+            "verified_at": null,
+            "expires_at": "2020-09-21T16:16:27.759878Z"
+        }
+    ],
+    "recovery_addresses": [
+        {
+            "id": "b828d28f-5ff7-40cb-85cd-0221af369ab0",
+            "value": "ryoko@isi.co.id",
+            "via": "email"
+        }
+    ]
+}
