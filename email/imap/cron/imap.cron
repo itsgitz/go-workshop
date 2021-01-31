@@ -1,0 +1,2 @@
+# imap client crontab
+* * * * * (sleep 5; ./go/src/imap)
