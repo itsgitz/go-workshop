@@ -1,0 +1,2 @@
+# file operation crontab
+* * * * * (sleep 5; /go/src/cron_file/main)

@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  cron_file:
+    container_name: app_cron_file
+    build: .
+    networks:
+      - cron
+
+networks:
+  cron:
+    driver: bridge
