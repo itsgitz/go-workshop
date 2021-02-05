@@ -35,7 +35,7 @@ func (cl *Client) ListMailBoxes() {
 	}
 }
 
-// SelectInbox for select the INBOX mailbox
+// selectInbox for select the INBOX mailbox
 func (cl *Client) selectInbox() {
 	inbox, err := cl.Client.Select("INBOX", false)
 	if err != nil {
@@ -127,22 +127,33 @@ func (cl *Client) GetMessageBody(wg *sync.WaitGroup) {
 		log.Fatal(err)
 	}
 
+	log.Println("Get Header")
+
 	header := reader.Header
 	if date, err := header.Date(); err == nil {
 		log.Println("Date:", date)
 	}
 
 	if from, err := header.AddressList("From"); err == nil {
-		log.Println("From:", from)
+		log.Println("From Name:", from[0].Name)
+		log.Println("From Address:", from[0].Address)
 	}
 
 	if to, err := header.AddressList("To"); err == nil {
-		log.Println("To:", to)
+		log.Println("To Name:", to[0].Name)
+		log.Println("To Address:", to[0].Address)
 	}
 
 	if subject, err := header.Subject(); err == nil {
 		log.Println("Subject:", subject)
 	}
+
+	messageID, err := header.MessageID()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("Message-Id:", messageID)
 
 	p, err := reader.NextPart()
 	if err != nil {

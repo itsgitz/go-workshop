@@ -1,0 +1,2 @@
+# file operation crontab
+* * * * * (sleep 1; cd /srv/ && ./main)

@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/itsgitz/go-workshop/ory-kratos/models"
+	"github.com/itsgitz/go-workshop/advanced/ory-kratos/models"
 )
 
 const (

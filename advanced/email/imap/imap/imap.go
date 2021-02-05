@@ -14,6 +14,8 @@ type Imap interface {
 	GetMessages()
 	GetMessageBody(wg *sync.WaitGroup)
 	CopyEmailToFile()
+	CheckNewEmail()
+	ListMailBoxes()
 }
 
 // New method for initialize new imap client
