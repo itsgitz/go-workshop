@@ -50,17 +50,18 @@ func (cl *Client) GetMessages() {
 	// first, select the inbox mailbox
 	cl.selectInbox()
 
-	from := uint32(1)
-	to := cl.Mailbox.Status.Messages
+	// from := uint32(1)
+	// to := cl.Mailbox.Status.Messages
 
-	if cl.Mailbox.Status.Messages > 3 {
-		from = cl.Mailbox.Status.Messages - 1
-	}
+	// if cl.Mailbox.Status.Messages > 3 {
+	// 	from = cl.Mailbox.Status.Messages - 1
+	// }
 
-	log.Println("from:", from, "to:", to)
+	// log.Println("from:", from, "to:", to)
 
 	seqset := new(gi.SeqSet)
-	seqset.AddRange(from, to)
+	// seqset.AddRange(from, to)
+	seqset.AddRange(cl.Mailbox.Status.Messages, cl.Mailbox.Status.Messages)
 
 	messages := make(chan *gi.Message, 10)
 	done := make(chan error, 1)

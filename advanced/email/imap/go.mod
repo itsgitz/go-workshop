@@ -1,4 +1,4 @@
-module github.com/itsgitz/go-workshop/email/imap
+module github.com/itsgitz/go-workshop/advanced/email/imap
 
 go 1.15
 
