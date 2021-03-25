@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+type Power struct {
+	Value string
+}
+
 func main() {
 	var keyArray []string
 
