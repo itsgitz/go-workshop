@@ -1,6 +1,6 @@
 # Go Workshop
 
-The repository that contains all of Go source code for doing a workshop with Go (Golang).
+This repository contains workshops or exercises using Go.
 
 # Contributor
 
