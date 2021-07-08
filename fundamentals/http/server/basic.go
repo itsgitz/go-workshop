@@ -32,6 +32,10 @@ func main() {
 func baseMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Println("[*] From baseMiddleware")
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+
 		next.ServeHTTP(w, r)
 	})
 }
@@ -60,7 +64,8 @@ func home(w http.ResponseWriter, r *http.Request) {
 func getSongs(w http.ResponseWriter, r *http.Request) {
 	// songs stores the list of songs in array struct
 	// example output:
-	// [{162f14f4-bf53-4b2e-b196-aa8b0307a437 The Reason Hoobastank The Reason} {82c8b8e2-5de0-47d2-bf05-b72a8c090029 Still into You Paramore Paramore}]
+	// [{162f14f4-bf53-4b2e-b196-aa8b0307a437 The Reason Hoobastank The Reason}
+	// {82c8b8e2-5de0-47d2-bf05-b72a8c090029 Still into You Paramore Paramore}]
 	songs := []Songs{
 		{
 			ID:     uuid.NewString(),
@@ -86,7 +91,6 @@ func getSongs(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// write header on as application/json
-	w.Header().Set("Content-Type", "application/json")
 	w.Write(encJSON)
 }
 
@@ -114,7 +118,6 @@ func getPlaylists(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		showErrorResponse(w)
 	}
-	w.Header().Set("Content-Type", "application/json")
 	w.Write(encJSON)
 }
 
