@@ -11,9 +11,13 @@ func compute(val int) {
 		fmt.Println(i)
 	}
 }
+
 func main() {
+	fmt.Println("Started")
 	go compute(10)
 	go compute(5)
 
-	fmt.Scanln()
+	fmt.Println("Finish")
+
+	time.Sleep(10 * time.Second)
 }
